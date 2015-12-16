@@ -1,19 +1,33 @@
 var TelegramBot = require('node-telegram-bot-api');
 
-var token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+var token = "XXXXXXXXXXXXXXXXXX";
 // Setup polling way
 var bot = new TelegramBot(token, {polling: true});
-var msgArray = [
-    "Sup, motherfucking posh {{match}}",
-    "{{match}} is so fucking posh!",
-    "Damn you, {{match}}, you are dazzling posh",
-    "{{match}}, you are such a posh bitch.",
-    "{{match}} is so posh that it needs standing ovation from our middle finger!"
+var xubzReply = [
+                    "k.",
+                    "hi",
+                    "nvm",
+                    "baka",
+                    "anime",
+                    "poha is worse than upma",
+                    "mfw persona 4",
+                    "lewd",
+                    "yuri yuri",
+                    "Ghanta",
+                    "*facepalm*"
 ];
-bot.onText(/\/posh (.+)/, function (msg, match) {
-console.log(msg);
-var fromId = msg.chat.id;
-  var resp = msgArray[Math.floor(Math.random()*msgArray.length)].replace("{{match}}", match[1]);
-  bot.sendMessage(fromId, resp);
+var typingIntervals = [5,6,7,8,9];
+var xubzyProbability = 67;
+bot.onText(/\/pullaxubz/, function (msg, match) {
+    var fromId = msg.chat.id;
+    var randomTypingTime = typingIntervals[Math.floor(Math.random() * typingIntervals.length)]*1000;
+    bot.sendChatAction(fromId, "typing");
+    setTimeout(function(){
+        var randomReply = xubzReply[Math.floor(Math.random() * xubzReply.length)];
+        var shouldXubzSend = Math.round()*100<xubzyProbability?false:true;
+        bot.sendChatAction(fromId, "");
+        if(shouldXubzSend) {
+            bot.sendMessage(fromId, randomReply);
+        }
+    }, randomTypingTime);
 });
-
