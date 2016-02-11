@@ -24,6 +24,7 @@ var normalText = [
     "Bhencho, stop expecting",
     "Mat expect kiya karo yar.",
     "Abhi bhi expecting?",
+    "The nation wants to know why are you expecting?",
     "I definitely did not expect that!!!!!!11!",
     "bc, expecting, expecting, expecting.",
     "Jitna jyada expect karoge, utna jyada niraash hoge",
@@ -33,6 +34,8 @@ var normalText = [
     "I too expected that!",
     "Tu expect hi karta rahe mere bhai",
     "Tumse na ho payega.. mat kar expect",
+    "Hai himmat expect karne ki?",
+    "Bhootnike kiski ki expect kar raha hai tu? Sonu Nigam?",
     "Kitna expect karega? Ab baby expect kar mera, tere pet me."
 ];
 
@@ -44,6 +47,8 @@ var irritatedText = [
     "STFU",
     "Leave me alone.",
     "Fuck off",
+    "I will file charges!,"
+    "Chottomatte"
     "Sale suvar, gadhe, makkaar."
 ];
 
